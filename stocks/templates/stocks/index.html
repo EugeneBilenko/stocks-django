@@ -1,0 +1,40 @@
+<head>
+    <meta charset="utf-8">
+    <title>Tiny Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="col-md-4 col-md-offset-4">
+    <h1>User Input</h1>
+
+
+    <h3>Please fill all fields.</h3>
+
+    <form id='input' method='post' action='{% url "stocks:table_view" %}' class="form-group">
+         {% csrf_token %}
+        <div class="form-group">
+            <label for="algo_name">Algo name:</label>
+            <input type="text" class="form-control" name="algo_name">
+
+            <label for="signal">Signal:</label>
+            <input type="text" class="form-control" name="signal">
+
+            <label for="trade">Trade:</label>
+            <input type="text" class="form-control" name="trade">
+
+            <label for="ticker">Ticker symbol:</label>
+            <input type="text" class="form-control" name="ticker">
+        </div>
+
+        <p>
+            <button type="submit" class="btn btn-default" value="Submit">Algo table</button>
+        </p>
+    </form>
+
+
+</div>
+</body>

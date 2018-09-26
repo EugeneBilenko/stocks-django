@@ -1,0 +1,30 @@
+<head>
+    <meta charset="utf-8">
+    <title>Tiny Project</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Data</h1>
+        <table class="table table-striped">
+            <thead>
+                <td>name</td>
+                <td>daily_pnl</td>
+            </thead>
+            <tbody>
+            {% for val in d_val %}
+                <tr class="pika-table">
+                    <td>
+                        <a href="{% url 'stocks:graph' val.name %}">{{ val.name }}</a>
+                    </td>
+                    <td>{{ val.daily_pnl }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
